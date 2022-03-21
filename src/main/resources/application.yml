@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    username: admin
+    password: 1234qwer!
+    url: jdbc:mysql://devops-test.c4e8qukc2vf7.ap-northeast-2.rds.amazonaws.com/devops?serverTimezone=UTC&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    show-sql: true
+#    hibernate:
+#      ddl-auto: create
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+
+server:
+  error:
+    include-exception: false      # Response Exception 표시
+    include-message: always       # Response Exception Message 표시 (never | always | on_param)
+    include-stacktrace: on_param  # Response Stack Trace 표시 (never | always | on_param)
+    whitelabel.enabled: true      # 에러 발생 시 Spring 기본 에러 페이지 노출 여부
