@@ -1,9 +1,9 @@
 package com.example.devopstest.domain.repository;
 
-import com.example.devopstest.domain.entity.Order;
+import com.example.devopstest.domain.entity.OrderDetail;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface OrderRepository extends JpaRepository<Order, Long> {
+public interface OrderDetailRepository extends JpaRepository<OrderDetail, Long> {
 }

@@ -48,6 +48,10 @@ class ShopRepositoryTest {
             shop.getMenuList().forEach(menu -> {
                 System.out.println("메뉴 이름 : " + menu.getName());
             });
+
+            shop.getOrderDetailList().forEach(orderDetail -> {
+                System.out.println("주문 주소 : " + orderDetail.getAddress());
+            });
         });
 
         System.out.println("test passed!");

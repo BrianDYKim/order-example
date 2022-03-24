@@ -31,5 +31,5 @@ public class Shop {
     // Shop : Order = 1 : N
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "shop", cascade = CascadeType.ALL)
     @JsonManagedReference
-    private List<Order> orderList;
+    private List<OrderDetail> orderDetailList;
 }

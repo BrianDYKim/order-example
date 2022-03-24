@@ -15,7 +15,7 @@ import java.util.List;
 @Builder
 @Accessors(chain = true)
 @Entity
-public class Order {
+public class OrderDetail {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +23,7 @@ public class Order {
 
     private LocalDateTime orderAt;
 
-    private Integer estimatedTime;
+    private Integer deliverEstimatedTime;
 
     private Boolean deliverFinished;
 
@@ -35,7 +35,7 @@ public class Order {
     private Shop shop;
 
     // Order : OrderFood = 1 : N
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "order", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "orderDetail", cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<OrderFood> orderFoodList;
 }

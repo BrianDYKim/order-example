@@ -23,5 +23,5 @@ public class OrderFood {
     // OrderFood : Order = N : 1
     @ManyToOne
     @JsonBackReference
-    private Order order;
+    private OrderDetail orderDetail;
 }
