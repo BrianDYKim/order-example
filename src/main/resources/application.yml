@@ -2,7 +2,7 @@ spring:
   datasource:
     username: admin
     password: 1234qwer!
-    url: jdbc:mysql://devops-test.c4e8qukc2vf7.ap-northeast-2.rds.amazonaws.com/devops?serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mysql://order-test-db.c4e8qukc2vf7.ap-northeast-2.rds.amazonaws.com/devops?serverTimezone=UTC&characterEncoding=UTF-8
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
