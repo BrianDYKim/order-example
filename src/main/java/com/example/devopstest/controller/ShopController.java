@@ -4,6 +4,7 @@ import com.example.devopstest.servicce.ShopService;
 import com.example.devopstest.system.dto.request.ShopRequestDto;
 import com.example.devopstest.system.dto.response.ShopResponseDto;
 import com.example.devopstest.system.result.CommonResult;
+import com.example.devopstest.system.result.MultipleResult;
 import com.example.devopstest.system.result.SingleResult;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -25,5 +26,10 @@ public class ShopController {
     @PostMapping("")
     public ResponseEntity<CommonResult> create(@RequestBody ShopRequestDto requestDto) {
         return shopService.create(requestDto);
+    }
+
+    @GetMapping("/all-list")
+    public ResponseEntity<MultipleResult<ShopResponseDto>> searchAllShops() {
+        return shopService.searchAllShops();
     }
 }
