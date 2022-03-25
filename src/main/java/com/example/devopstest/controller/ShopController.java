@@ -32,4 +32,10 @@ public class ShopController {
     public ResponseEntity<MultipleResult<ShopResponseDto>> searchAllShops() {
         return shopService.searchAllShops();
     }
+
+    // For Health Check
+    @GetMapping("/check")
+    public String healthCheck() {
+        return "Health check!!";
+    }
 }
