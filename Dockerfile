@@ -1,7 +1,7 @@
 FROM openjdk:11-jdk
 
-ARG JAR_FILE=build/libs/*.jar
+COPY . /order-example
 
-COPY ${JAR_FILE} app.jar
+WORKDIR /order-example
 
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+CMD ["./gradlew", "bootRun"]
