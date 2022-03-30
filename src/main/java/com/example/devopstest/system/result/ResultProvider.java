@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class ResultFactory {
+public class ResultProvider {
 
     // 성공 결과만 반환하는 메소드
     public static CommonResult getSuccessResult() {

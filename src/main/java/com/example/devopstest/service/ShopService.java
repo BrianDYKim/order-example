@@ -1,4 +1,4 @@
-package com.example.devopstest.servicce;
+package com.example.devopstest.service;
 
 import com.example.devopstest.domain.entity.Shop;
 import com.example.devopstest.domain.repository.ShopRepository;
@@ -6,7 +6,7 @@ import com.example.devopstest.system.dto.request.ShopRequestDto;
 import com.example.devopstest.system.dto.response.ShopResponseDto;
 import com.example.devopstest.system.result.CommonResult;
 import com.example.devopstest.system.result.MultipleResult;
-import com.example.devopstest.system.result.ResultFactory;
+import com.example.devopstest.system.result.ResultProvider;
 import com.example.devopstest.system.result.SingleResult;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +25,7 @@ public class ShopService {
     // GET Method
     public ResponseEntity<SingleResult<ShopResponseDto>> read(Long id) {
         return shopRepository.findById(id).map(shop ->
-                ResponseEntity.ok(ResultFactory.getSingleResult(entityToResponseDto(shop)))
+                ResponseEntity.ok(ResultProvider.getSingleResult(entityToResponseDto(shop)))
         ).orElseThrow(() -> new EntityNotFoundException("Entity not found!"));
     }
 
@@ -38,7 +38,7 @@ public class ShopService {
         if (savedShop == null)
             throw new RuntimeException();
 
-        return ResponseEntity.ok(ResultFactory.getSuccessResult());
+        return ResponseEntity.ok(ResultProvider.getSuccessResult());
     }
 
     // 모든 가게 목록을 뽑아오는 메소드
@@ -52,7 +52,7 @@ public class ShopService {
         ).collect(Collectors.toList()
         );
 
-        return ResponseEntity.ok(ResultFactory.getMultipleResult(responseList)
+        return ResponseEntity.ok(ResultProvider.getMultipleResult(responseList)
         );
     }
 

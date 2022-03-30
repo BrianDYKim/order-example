@@ -1,4 +1,4 @@
-package com.example.devopstest.servicce;
+package com.example.devopstest.service;
 
 import com.example.devopstest.domain.entity.Menu;
 import com.example.devopstest.domain.entity.Shop;
@@ -7,7 +7,7 @@ import com.example.devopstest.domain.repository.ShopRepository;
 import com.example.devopstest.system.dto.request.MenuRequestDto;
 import com.example.devopstest.system.dto.response.MenuResponseDto;
 import com.example.devopstest.system.result.CommonResult;
-import com.example.devopstest.system.result.ResultFactory;
+import com.example.devopstest.system.result.ResultProvider;
 import com.example.devopstest.system.result.SingleResult;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +26,7 @@ public class MenuService {
 
     public ResponseEntity<SingleResult<MenuResponseDto>> read(Long id) {
         return menuRepository.findById(id).map(menu -> ResponseEntity.ok(
-                ResultFactory.getSingleResult(entityToResponseDto(menu)))
+                ResultProvider.getSingleResult(entityToResponseDto(menu)))
         ).orElseThrow(() -> new EntityNotFoundException("Entity not found!")
         );
     }
@@ -43,7 +43,7 @@ public class MenuService {
         if(savedMenu == null)
             throw new RuntimeException();
 
-        return ResponseEntity.ok(ResultFactory.getSuccessResult());
+        return ResponseEntity.ok(ResultProvider.getSuccessResult());
     }
 
     // entity -> responseDto

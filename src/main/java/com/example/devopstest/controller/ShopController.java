@@ -1,6 +1,6 @@
 package com.example.devopstest.controller;
 
-import com.example.devopstest.servicce.ShopService;
+import com.example.devopstest.service.ShopService;
 import com.example.devopstest.system.dto.request.ShopRequestDto;
 import com.example.devopstest.system.dto.response.ShopResponseDto;
 import com.example.devopstest.system.result.CommonResult;

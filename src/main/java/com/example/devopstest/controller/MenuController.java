@@ -1,6 +1,6 @@
 package com.example.devopstest.controller;
 
-import com.example.devopstest.servicce.MenuService;
+import com.example.devopstest.service.MenuService;
 import com.example.devopstest.system.dto.request.MenuRequestDto;
 import com.example.devopstest.system.dto.response.MenuResponseDto;
 import com.example.devopstest.system.result.CommonResult;
